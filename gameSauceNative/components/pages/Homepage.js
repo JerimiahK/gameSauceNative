@@ -197,25 +197,25 @@ export default function Homepage() {
 
   return (
     <View style={style.currentGameBox}>
-      <View style="currentGameHeader">
-        <View style="headerRow">
-          <View style="col-5 headerColumn">
-            <Text style="headerTeam">{awayName}</Text>
-            <Text style="teamRecord">
+      <View style={style.currentGameHeader}>
+        <View style={style.headerRow}>
+          <View style={style.headerColumn}>
+            <Text style={style.headerTeam}>{awayName}</Text>
+            <Text style={style.teamRecord}>
               {awayWins}-{awayLosses}-{awayTies}
             </Text>
-            <Text style="headerScore">{awayScore}</Text>
+            <Text style={style.headerScore}>{awayScore}</Text>
           </View>
-          <View style="period">
-            <Text style="headerPeriod">{period}</Text>
-            <Text style="headerTime">{time}</Text>
+          <View style={style.period}>
+            <Text style={style.headerPeriod}>{period}</Text>
+            <Text style={style.headerTime}>{time}</Text>
           </View>
-          <View style="col-5 headerColumn">
-            <Text style="headerTeam">{homeName}</Text>
-            <Text style="teamRecord">
+          <View style={style.headerColumn}>
+            <Text style={style.headerTeam}>{homeName}</Text>
+            <Text style={style.teamRecord}>
               {homeWins}-{homeLosses}-{homeTies}
             </Text>
-            <Text style="headerScore">{homeScore}</Text>
+            <Text style={style.headerScore}>{homeScore}</Text>
           </View>
         </View>
       </View>
@@ -267,13 +267,66 @@ export default function Homepage() {
 
 const style = StyleSheet.create({
   currentGameBox: {
+    padding: "5%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    alignItems: "center",
     backgroundColor: "#282828",
-    color: "#C5C6C7",
     borderRadius: "7%",
     boxShadow: "0px 0px 12% 1px #92b9e0",
-  }
-})
+  },
+  currentGameHeader: {
+    height: "40%",
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  headerRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end",
+    width: "100%",
+  },
+  headerColumn: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "50%",
+  },
+  headerTeam: {
+    fontWeight: "bolder",
+    fontSize: "30%",
+    textAlign: "center",
+    color: "#C5C6C7",
+  },
+  teamRecord: {
+    padding: "5% 0% 3% 0%",
+    color: "#C5C6C7",
+  },
+  headerScore: {
+    fontSize: "40%",
+    color: "#C5C6C7",
+  },
+  period: {
+    paddingBottom: "1%",
+    color: "#C5C6C7",
+  },
+  headerPeriod: {
+    fontWeight: "800",
+    fontSize: "20%",
+    margin: "0% 0% 3% 0%",
+    textAlign: "center",
+    color: "#C5C6C7",
+  },
+  headerTime: {
+    fontWeight: "800",
+    fontSize: "20%",
+    textAlign: "center",
+    color: "#C5C6C7",
+  },
+});
