@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Homepage() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
@@ -192,74 +193,87 @@ export default function Homepage() {
 
   useEffect(() => {
     getData()
-  }, getData)
+  }, [getData])
 
   return (
-    <div className="currentGameBox">
-      <div className="currentGameHeader">
-        <div className="headerRow">
-          <div className="col-5 headerColumn">
-            <h6 className="headerTeam">{awayName}</h6>
-            <p className="teamRecord">
+    <View style={style.currentGameBox}>
+      <View style="currentGameHeader">
+        <View style="headerRow">
+          <View style="col-5 headerColumn">
+            <Text style="headerTeam">{awayName}</Text>
+            <Text style="teamRecord">
               {awayWins}-{awayLosses}-{awayTies}
-            </p>
-            <h1 className="headerScore">{awayScore}</h1>
-          </div>
-          <div className="period">
-            <p className="headerPeriod">{period}</p>
-            <p className="headerTime">{time}</p>
-          </div>
-          <div className="col-5 headerColumn">
-            <h6 className="headerTeam">{homeName}</h6>
-            <p className="teamRecord">
+            </Text>
+            <Text style="headerScore">{awayScore}</Text>
+          </View>
+          <View style="period">
+            <Text style="headerPeriod">{period}</Text>
+            <Text style="headerTime">{time}</Text>
+          </View>
+          <View style="col-5 headerColumn">
+            <Text style="headerTeam">{homeName}</Text>
+            <Text style="teamRecord">
               {homeWins}-{homeLosses}-{homeTies}
-            </p>
-            <h1 className="headerScore">{homeScore}</h1>
-          </div>
-        </div>
-      </div>
-      <div id="statsColumn" className="container text-center">
-        <div className="currentRow">
-          <div className="column">
-            <p className="staticValue">S.O.G:</p>
-            <p className="liveStat">{awaySOG}</p>
-          </div>
-          <div className="column">
-            <p className="staticValue">S.O.G:</p>
-            <p className="liveStat">{homeSOG}</p>
-          </div>
-        </div>
-        <div className="currentRow">
-          <div className="column">
-            <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">{awayFO}</p>
-          </div>
-          <div className="column">
-            <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">{homeFO}</p>
-          </div>
-        </div>
-        <div className="currentRow">
-          <div className="column">
-            <p className="staticValue">Hits</p>
-            <p className="liveStat">{awayHits}</p>
-          </div>
-          <div className="column">
-            <p className="staticValue">Hits</p>
-            <p className="liveStat">{homeHits}</p>
-          </div>
-        </div>
-        <div className="currentRow">
-          <div className="column">
-            <p className="staticValue">PIM</p>
-            <p className="liveStat">{awayPIM}</p>
-          </div>
-          <div className="column">
-            <p className="staticValue">PIM</p>
-            <p className="liveStat">{homePIM}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Text>
+            <Text style="headerScore">{homeScore}</Text>
+          </View>
+        </View>
+      </View>
+      <View id="statsColumn" style="container text-center">
+        <View style="currentRow">
+          <View style="column">
+            <Text style="staticValue">S.O.G:</Text>
+            <Text style="liveStat">{awaySOG}</Text>
+          </View>
+          <View style="column">
+            <Text style="staticValue">S.O.G:</Text>
+            <Text style="liveStat">{homeSOG}</Text>
+          </View>
+        </View>
+        <View style="currentRow">
+          <View style="column">
+            <Text style="staticValue">Faceoff Win %</Text>
+            <Text style="liveStat">{awayFO}</Text>
+          </View>
+          <View style="column">
+            <Text style="staticValue">Faceoff Win %</Text>
+            <Text style="liveStat">{homeFO}</Text>
+          </View>
+        </View>
+        <View style="currentRow">
+          <View style="column">
+            <Text style="staticValue">Hits</Text>
+            <Text style="liveStat">{awayHits}</Text>
+          </View>
+          <View style="column">
+            <Text style="staticValue">Hits</Text>
+            <Text style="liveStat">{homeHits}</Text>
+          </View>
+        </View>
+        <View style="currentRow">
+          <View style="column">
+            <Text style="staticValue">PIM</Text>
+            <Text style="liveStat">{awayPIM}</Text>
+          </View>
+          <View style="column">
+            <Text style="staticValue">PIM</Text>
+            <Text style="liveStat">{homePIM}</Text>
+          </View>
+        </View>
+      </View>
+    </View>
   );
 }
+
+const style = StyleSheet.create({
+  currentGameBox: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    backgroundColor: "#282828",
+    color: "#C5C6C7",
+    borderRadius: "7%",
+    boxShadow: "0px 0px 12% 1px #92b9e0",
+  }
+})
