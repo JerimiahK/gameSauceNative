@@ -233,11 +233,11 @@ export default function Homepage() {
         </View>
         <View style={style.currentRow}>
           <View style={style.column}>
-            <Text style={style.staticValue}>F.O.W. %</Text>
+            <Text style={style.staticValue}>FO %</Text>
             <Text style={style.liveStat}>{awayFO}%</Text>
           </View>
           <View style={style.column}>
-            <Text style={style.staticValue}>F.O.W. %</Text>
+            <Text style={style.staticValue}>FO %</Text>
             <Text style={style.liveStat}>{homeFO}%</Text>
           </View>
         </View>
@@ -269,25 +269,22 @@ export default function Homepage() {
 const style = StyleSheet.create({
   currentGameBox: {
     padding: "2%",
-    height: "100%",
+    flex: "6",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "#282828",
+    backgroundColor: "white",
   },
   currentGameHeader: {
-    height: "30%",
-    textAlign: "center",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "flex-start",
   },
   headerRow: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "center",
     width: "100%",
   },
   headerColumn: {
@@ -298,63 +295,65 @@ const style = StyleSheet.create({
     width: "50%",
   },
   headerTeam: {
-    fontWeight: "bolder",
+    fontWeight: "600",
     fontSize: "30%",
     textAlign: "center",
-    color: "#C5C6C7",
+    color: "#6c6d70",
   },
   teamRecord: {
     padding: "5% 0% 3% 0%",
-    color: "#C5C6C7",
+    color: "#6c6d70",
+    fontWeight: "800"
   },
   headerScore: {
     fontSize: "40%",
-    color: "#C5C6C7",
+    color: "#6c6d70",
   },
   period: {
     paddingBottom: "1%",
-    color: "#C5C6C7",
+    color: "#6c6d70",
   },
   headerPeriod: {
     fontWeight: "800",
     fontSize: "20%",
     margin: "0% 0% 3% 0%",
     textAlign: "center",
-    color: "#C5C6C7",
+    color: "#6c6d70",
   },
   headerTime: {
     fontWeight: "800",
     fontSize: "20%",
     textAlign: "center",
-    color: "#C5C6C7",
+    color: "#6c6d70",
   },
   statsColumn: {
+    display: "flex",
+    flexDirection: "column",
     fontWeight: "700",
   },
   currentRow: {
-    padding: "3% 0% 3% 0%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    width: "200%",
-    textAlign: "center",
   },
   column: {
-    textAlign: "center",
+    width: "50%",
   },
   liveStat: {
     fontSize: "20%",
-    fontWeight: "400",
+    fontWeight: "600",
     textDecorationColor: "none",
     textDecorationStyle: "none",
     textAlign: "center",
     paddingTop: "5%",
-    color: "#C5C6C7",
+    color: "#6c6d70",
+    width: "100%",
   },
   staticValue: {
     fontSize: "20%",
+    fontWeight: "800",
     textDecorationLine: "underline",
-    color: "#C5C6C7",
+    color: "#6c6d70",
     textAlign: "center",
+    width: "100%",
   },
 });
