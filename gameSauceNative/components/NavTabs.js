@@ -1,11 +1,6 @@
 import { View, Text, StyleSheet, Button } from "react-native";
-// import Auth from "../utils/auth";
 
 export default function NavTabs() {
-  // const logout = (event) => {
-  //   event.preventDefault();
-  //   Auth.logout();
-  // };
   
 return (
   <View style={style.navContainer}>
