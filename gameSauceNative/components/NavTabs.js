@@ -22,6 +22,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "#00d4ff",
   },
   navbarText: {
     paddingLeft: "5%",
@@ -34,6 +35,6 @@ const style = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-start",
     margin: "5%",
-    textDecorationColor: "none"
+    textDecorationColor: "none",
   },
 });

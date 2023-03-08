@@ -197,96 +197,82 @@ export default function Homepage() {
   }, [getData])
 
   return (
-    <View style={style.currentGameBox}>
-      <LinearGradient colors={["#4c669f", "#670979", "#00d4ff"]}>
-        <View style={style.currentGameHeader}>
-            <View style={style.headerColumn}>
-              <Text style={style.headerTeam}>{awayName}</Text>
-              <Text style={style.teamRecord}>
-                {awayWins}-{awayLosses}-{awayTies}
-              </Text>
-              <Text style={style.headerScore}>{awayScore}</Text>
-            </View>
-            <View style={style.period}>
-              <Text style={style.headerPeriod}>{period}1st</Text>
-              <Text style={style.headerTime}>{time}20:00</Text>
-            </View>
-            <View style={style.headerColumn}>
-              <Text style={style.headerTeam}>{homeName}</Text>
-              <Text style={style.teamRecord}>
-                {homeWins}-{homeLosses}-{homeTies}
-              </Text>
-              <Text style={style.headerScore}>{homeScore}</Text>
-            </View>
+    <LinearGradient style={{ height: "100%" }} colors={["#43014f", "#00d4ff"]}>
+      <View style={style.currentGameHeader}>
+        <View style={style.headerColumn}>
+          <Text style={style.headerTeam}>{awayName}</Text>
+          <Text style={style.teamRecord}>
+            {awayWins}-{awayLosses}-{awayTies}
+          </Text>
+          <Text style={style.headerScore}>{awayScore}</Text>
         </View>
-        {/* Stats Column */}
-        <View style={style.statsColumn}>
-          <View style={style.currentRow}>
-            <View style={style.column}>
-              <Text style={style.staticValue}>S.O.G</Text>
-              <Text style={style.liveStat}>{awaySOG}</Text>
-            </View>
-            <View style={style.column}>
-              <Text style={style.staticValue}>S.O.G</Text>
-              <Text style={style.liveStat}>{homeSOG}</Text>
-            </View>
+        <View style={style.period}>
+          <Text style={style.headerPeriod}>{period}1st</Text>
+          <Text style={style.headerTime}>{time}20:00</Text>
+        </View>
+        <View style={style.headerColumn}>
+          <Text style={style.headerTeam}>{homeName}</Text>
+          <Text style={style.teamRecord}>
+            {homeWins}-{homeLosses}-{homeTies}
+          </Text>
+          <Text style={style.headerScore}>{homeScore}</Text>
+        </View>
+      </View>
+      {/* Stats Column */}
+      <View style={style.statsColumn}>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>S.O.G</Text>
+            <Text style={style.liveStat}>{awaySOG}</Text>
           </View>
-          <View style={style.currentRow}>
-            <View style={style.column}>
-              <Text style={style.staticValue}>FO %</Text>
-              <Text style={style.liveStat}>{awayFO}%</Text>
-            </View>
-            <View style={style.column}>
-              <Text style={style.staticValue}>FO %</Text>
-              <Text style={style.liveStat}>{homeFO}%</Text>
-            </View>
-          </View>
-          <View style={style.currentRow}>
-            <View style={style.column}>
-              <Text style={style.staticValue}>Hits</Text>
-              <Text style={style.liveStat}>{awayHits}</Text>
-            </View>
-            <View style={style.column}>
-              <Text style={style.staticValue}>Hits</Text>
-              <Text style={style.liveStat}>{homeHits}</Text>
-            </View>
-          </View>
-          <View style={style.currentRow}>
-            <View style={style.column}>
-              <Text style={style.staticValue}>PIM</Text>
-              <Text style={style.liveStat}>{awayPIM}</Text>
-            </View>
-            <View style={style.column}>
-              <Text style={style.staticValue}>PIM</Text>
-              <Text style={style.liveStat}>{homePIM}</Text>
-            </View>
+          <View style={style.column}>
+            <Text style={style.staticValue}>S.O.G</Text>
+            <Text style={style.liveStat}>{homeSOG}</Text>
           </View>
         </View>
-      </LinearGradient>
-    </View>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>FO %</Text>
+            <Text style={style.liveStat}>{awayFO}%</Text>
+          </View>
+          <View style={style.column}>
+            <Text style={style.staticValue}>FO %</Text>
+            <Text style={style.liveStat}>{homeFO}%</Text>
+          </View>
+        </View>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>Hits</Text>
+            <Text style={style.liveStat}>{awayHits}</Text>
+          </View>
+          <View style={style.column}>
+            <Text style={style.staticValue}>Hits</Text>
+            <Text style={style.liveStat}>{homeHits}</Text>
+          </View>
+        </View>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>PIM</Text>
+            <Text style={style.liveStat}>{awayPIM}</Text>
+          </View>
+          <View style={style.column}>
+            <Text style={style.staticValue}>PIM</Text>
+            <Text style={style.liveStat}>{homePIM}</Text>
+          </View>
+        </View>
+      </View>
+    </LinearGradient>
   );
 }
 
 const style = StyleSheet.create({
-  currentGameBox: {
-    flex: "6",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
   currentGameHeader: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignContent: "center",
+    height: "40%"
   },
-  // headerRow: {
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   justifyContent: "center",
-  //   width: "100%",
-  // },
   headerColumn: {
     display: "flex",
     flexDirection: "column",
@@ -296,17 +282,18 @@ const style = StyleSheet.create({
   },
   headerTeam: {
     fontWeight: "600",
-    fontSize: "30%",
+    fontSize: 28,
     textAlign: "center",
     color: "#fff",
   },
   teamRecord: {
     padding: "5% 0% 3% 0%",
     color: "#fff",
-    fontWeight: "800"
+    fontWeight: "800",
+    fontSize: 20,
   },
   headerScore: {
-    fontSize: 50,
+    fontSize: 60,
     fontWeight: "600",
     color: "#fff",
   },
@@ -330,12 +317,10 @@ const style = StyleSheet.create({
     color: "#fff",
   },
   statsColumn: {
-    paddingTop: "5%",
+    // paddingTop: "5%",
     display: "flex",
     flexDirection: "column",
     fontWeight: "700",
-    borderTopColor: "black",
-    borderTopWidth: "1%",
   },
   currentRow: {
     display: "flex",

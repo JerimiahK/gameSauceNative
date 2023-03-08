@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Games() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
@@ -36,7 +35,6 @@ export default function Games() {
   return (
     <div id="allGames" className="currentGameBox">
       {games?.map((game) => (
-        <Link className="allGamesLink" to={`/game/${game.id}`}>
           <div id="allGamesBox" className="container">
             <div className="allGamesTeamsBox">
               <div id="allGamesAway" className="allGamesRow">
@@ -50,7 +48,6 @@ export default function Games() {
             </div>
             <p className="gameStatus">{game.status}</p>
           </div>
-        </Link>
       ))}
     </div>
   );
