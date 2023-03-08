@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 
 export default function Homepage() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
@@ -219,45 +219,46 @@ export default function Homepage() {
           </View>
         </View>
       </View>
-      <View id="statsColumn" style="container text-center">
-        <View style="currentRow">
-          <View style="column">
-            <Text style="staticValue">S.O.G:</Text>
-            <Text style="liveStat">{awaySOG}</Text>
+      {/* Stats Column */}
+      <View style={style.statsColumn}>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>S.O.G</Text>
+            <Text style={style.liveStat}>{awaySOG}</Text>
           </View>
-          <View style="column">
-            <Text style="staticValue">S.O.G:</Text>
-            <Text style="liveStat">{homeSOG}</Text>
-          </View>
-        </View>
-        <View style="currentRow">
-          <View style="column">
-            <Text style="staticValue">Faceoff Win %</Text>
-            <Text style="liveStat">{awayFO}</Text>
-          </View>
-          <View style="column">
-            <Text style="staticValue">Faceoff Win %</Text>
-            <Text style="liveStat">{homeFO}</Text>
+          <View style={style.column}>
+            <Text style={style.staticValue}>S.O.G</Text>
+            <Text style={style.liveStat}>{homeSOG}</Text>
           </View>
         </View>
-        <View style="currentRow">
-          <View style="column">
-            <Text style="staticValue">Hits</Text>
-            <Text style="liveStat">{awayHits}</Text>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>F.O.W. %</Text>
+            <Text style={style.liveStat}>{awayFO}%</Text>
           </View>
-          <View style="column">
-            <Text style="staticValue">Hits</Text>
-            <Text style="liveStat">{homeHits}</Text>
+          <View style={style.column}>
+            <Text style={style.staticValue}>F.O.W. %</Text>
+            <Text style={style.liveStat}>{homeFO}%</Text>
           </View>
         </View>
-        <View style="currentRow">
-          <View style="column">
-            <Text style="staticValue">PIM</Text>
-            <Text style="liveStat">{awayPIM}</Text>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>Hits</Text>
+            <Text style={style.liveStat}>{awayHits}</Text>
           </View>
-          <View style="column">
-            <Text style="staticValue">PIM</Text>
-            <Text style="liveStat">{homePIM}</Text>
+          <View style={style.column}>
+            <Text style={style.staticValue}>Hits</Text>
+            <Text style={style.liveStat}>{homeHits}</Text>
+          </View>
+        </View>
+        <View style={style.currentRow}>
+          <View style={style.column}>
+            <Text style={style.staticValue}>PIM</Text>
+            <Text style={style.liveStat}>{awayPIM}</Text>
+          </View>
+          <View style={style.column}>
+            <Text style={style.staticValue}>PIM</Text>
+            <Text style={style.liveStat}>{homePIM}</Text>
           </View>
         </View>
       </View>
@@ -267,18 +268,16 @@ export default function Homepage() {
 
 const style = StyleSheet.create({
   currentGameBox: {
-    padding: "5%",
+    padding: "2%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#282828",
-    borderRadius: "7%",
-    boxShadow: "0px 0px 12% 1px #92b9e0",
   },
   currentGameHeader: {
-    height: "40%",
+    height: "30%",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -328,5 +327,34 @@ const style = StyleSheet.create({
     fontSize: "20%",
     textAlign: "center",
     color: "#C5C6C7",
+  },
+  statsColumn: {
+    fontWeight: "700",
+  },
+  currentRow: {
+    padding: "3% 0% 3% 0%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    width: "200%",
+    textAlign: "center",
+  },
+  column: {
+    textAlign: "center",
+  },
+  liveStat: {
+    fontSize: "20%",
+    fontWeight: "400",
+    textDecorationColor: "none",
+    textDecorationStyle: "none",
+    textAlign: "center",
+    paddingTop: "5%",
+    color: "#C5C6C7",
+  },
+  staticValue: {
+    fontSize: "20%",
+    textDecorationLine: "underline",
+    color: "#C5C6C7",
+    textAlign: "center",
   },
 });
