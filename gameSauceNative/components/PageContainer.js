@@ -4,7 +4,6 @@ import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
-// import SelectedGame from "./pages/SelectedGame";
 
 const Stack = createNativeStackNavigator();
 
@@ -62,6 +61,7 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignContent: "center",
     width: "100%",
+    backgroundColor: "#00d4ff",
   },
   icon: {
     backgroundColor: "#00d4ff",
