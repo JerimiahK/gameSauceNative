@@ -1,12 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View, Pressable } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
 // import SelectedGame from "./pages/SelectedGame";
-// import Login from "./pages/LoginPage";
-// import SignUp from "./pages/SignUpPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,9 +28,11 @@ export default function PageContainer() {
             <Icon.Button
               style={style.icon}
               name="games"
-              size={50}
+              size={60}
               onPress={() => navigation.navigate("Games")}
-            >Games</Icon.Button>
+            >
+              <Text style={style.iconText}>Games</Text>
+            </Icon.Button>
           </View>
         </View>
       </View>
@@ -54,18 +54,20 @@ const style = StyleSheet.create({
   navContainer: {
     position: "absolute",
     alignItems: "center",
-    bottom: 20,
+    bottom: 0,
     width: "100%",
   },
   navbar: {
     flexDirection: "row",
-    backgroundColor: "#00d4ff",
     justifyContent: "center",
     alignContent: "center",
-    borderRadius: 40,
+    width: "100%",
   },
   icon: {
-    width: "100%",
-    backgroundColor: "#43014f",
+    backgroundColor: "#00d4ff",
+  },
+  iconText: {
+    color: "#fff",
+    fontSize: 30,
   },
 });
