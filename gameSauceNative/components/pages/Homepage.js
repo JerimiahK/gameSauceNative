@@ -207,8 +207,8 @@ export default function Homepage() {
           <Text style={style.headerScore}>{awayScore}</Text>
         </View>
         <View style={style.period}>
-          <Text style={style.headerPeriod}>{period}1st</Text>
-          <Text style={style.headerTime}>{time}20:00</Text>
+          <Text style={style.headerPeriod}>{period}</Text>
+          <Text style={style.headerTime}>{time}</Text>
         </View>
         <View style={style.headerColumn}>
           <Text style={style.headerTeam}>{homeName}</Text>
@@ -305,19 +305,18 @@ const style = StyleSheet.create({
   },
   headerPeriod: {
     fontWeight: "800",
-    fontSize: "20%",
+    fontSize: 20,
     margin: "0% 0% 3% 0%",
     textAlign: "center",
     color: "#fff",
   },
   headerTime: {
     fontWeight: "800",
-    fontSize: "20%",
+    fontSize: 20,
     textAlign: "center",
     color: "#fff",
   },
   statsColumn: {
-    // paddingTop: "5%",
     display: "flex",
     flexDirection: "column",
     fontWeight: "700",
@@ -325,13 +324,13 @@ const style = StyleSheet.create({
   currentRow: {
     display: "flex",
     flexDirection: "row",
-    height: "19%"
+    height: "18%"
   },
   column: {
     width: "50%",
   },
   liveStat: {
-    fontSize: "25%",
+    fontSize: 25,
     fontWeight: "600",
     textDecorationColor: "none",
     textDecorationStyle: "none",
@@ -341,7 +340,7 @@ const style = StyleSheet.create({
     width: "100%",
   },
   staticValue: {
-    fontSize: "25%",
+    fontSize: 25,
     fontWeight: "800",
     textDecorationLine: "underline",
     color: "#fff",
