@@ -253,7 +253,6 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   headerScore: {
-    // height: "10%",
     fontSize: 60,
     fontWeight: "600",
     color: "#fff",
@@ -293,8 +292,6 @@ const style = StyleSheet.create({
   liveStat: {
     fontSize: 25,
     fontWeight: "600",
-    textDecorationColor: "none",
-    textDecorationStyle: "none",
     textAlign: "center",
     paddingTop: "5%",
     color: "#fff",

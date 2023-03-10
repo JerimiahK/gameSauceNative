@@ -41,7 +41,7 @@ export default function Games() {
         {games?.map((game) => (
           <View id="allGamesBox" className="container">
             <Pressable onPress={() => navigation.navigate("SelectedGame")}>
-              <View className="allGamesTeamsBox">
+              <View key={game.id} className="allGamesTeamsBox">
                 <View id="allGamesAway" className="allGamesRow">
                   <Text>{game.awayName}</Text>
                   <Text className="gameScore">{game.awayScore}</Text>
