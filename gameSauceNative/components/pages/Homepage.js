@@ -270,7 +270,8 @@ const style = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    height: "40%"
+    height: "40%",
+    padding: 20,
   },
   headerColumn: {
     display: "flex",
@@ -281,7 +282,7 @@ const style = StyleSheet.create({
   },
   headerTeam: {
     fontWeight: "600",
-    fontSize: 34,
+    fontSize: 29,
     textAlign: "center",
     color: "#fff",
   },
@@ -300,7 +301,7 @@ const style = StyleSheet.create({
     paddingBottom: "1%",
     color: "#fff",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   headerPeriod: {
     fontWeight: "800",
@@ -323,7 +324,7 @@ const style = StyleSheet.create({
   currentRow: {
     display: "flex",
     flexDirection: "row",
-    height: "20%"
+    height: "20%",
   },
   column: {
     width: "50%",
