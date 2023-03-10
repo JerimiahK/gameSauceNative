@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Pressable, ScrollView, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Games() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
@@ -35,31 +36,51 @@ export default function Games() {
     getData();
   }, [url]);
 
+  console.log(games);
+
   return (
-    <View id="allGames" className="currentGameBox">
+    <LinearGradient style={{ height: "90%" }} colors={["#43014f", "#00d4ff"]}>
       <ScrollView>
         {games?.map((game) => (
-          <View id="allGamesBox" className="container">
-            <Pressable onPress={() => navigation.navigate("SelectedGame")}>
-              <View className="allGamesTeamsBox">
-                <View id="allGamesAway" className="allGamesRow">
-                  <Text>{game.awayName}</Text>
-                  <Text className="gameScore">{game.awayScore}</Text>
-                </View>
-                <View id="allGamesHome" className="allGamesRow">
-                  <Text>{game.homeName}</Text>
-                  <Text className="gameScore">{game.homeScore}</Text>
-                </View>
+          <View key={game.id} style={style.box}>
+            <Pressable
+              style={style.page}
+              onPress={() => navigation.navigate("SelectedGame", 
+              {
+                id: game.id
+              }
+              )}
+            >
+              <View style={style.gameRow}>
+                <Text style={style.text}>{game.awayName}</Text>
+                <Text style={style.text}>{game.awayScore}</Text>
               </View>
-              <Text className="gameStatus">{game.status}</Text>
+              <View style={style.gameRow}>
+                <Text style={style.text}>{game.homeName}</Text>
+                <Text style={style.text}>{game.homeScore}</Text>
+              </View>
             </Pressable>
           </View>
         ))}
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
 
 const style = StyleSheet.create({
-  
+  gameRow: {
+    padding: 15,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  text: {
+    color: "#fff",
+    fontSize: 25,
+    fontWeight: "800"
+  },
+  box: {
+    borderColor: "#fff",
+    borderWidth: 2,
+  }
 })

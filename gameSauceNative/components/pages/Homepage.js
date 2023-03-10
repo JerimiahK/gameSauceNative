@@ -197,7 +197,7 @@ export default function Homepage() {
   }, [getData])
 
   return (
-    <LinearGradient style={{ height: "100%" }} colors={["#43014f", "#00d4ff"]}>
+    <LinearGradient style={{ height: "90%" }} colors={["#43014f", "#00d4ff"]}>
       <View style={style.currentGameHeader}>
         <View style={style.headerColumn}>
           <Text style={style.headerTeam}>{awayName}</Text>
@@ -270,7 +270,8 @@ const style = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    height: "40%"
+    height: "40%",
+    padding: 20,
   },
   headerColumn: {
     display: "flex",
@@ -281,7 +282,7 @@ const style = StyleSheet.create({
   },
   headerTeam: {
     fontWeight: "600",
-    fontSize: 34,
+    fontSize: 29,
     textAlign: "center",
     color: "#fff",
   },
@@ -292,7 +293,6 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   headerScore: {
-    // height: "10%",
     fontSize: 60,
     fontWeight: "600",
     color: "#fff",
@@ -301,7 +301,7 @@ const style = StyleSheet.create({
     paddingBottom: "1%",
     color: "#fff",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   headerPeriod: {
     fontWeight: "800",
@@ -324,7 +324,7 @@ const style = StyleSheet.create({
   currentRow: {
     display: "flex",
     flexDirection: "row",
-    height: "18%"
+    height: "20%",
   },
   column: {
     width: "50%",
@@ -332,8 +332,6 @@ const style = StyleSheet.create({
   liveStat: {
     fontSize: 25,
     fontWeight: "600",
-    textDecorationColor: "none",
-    textDecorationStyle: "none",
     textAlign: "center",
     paddingTop: "5%",
     color: "#fff",

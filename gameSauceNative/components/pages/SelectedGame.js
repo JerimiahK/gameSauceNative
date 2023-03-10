@@ -3,7 +3,7 @@ import { View, Text, StyleSheet} from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function SelectedGame() {
+export default function SelectedGame(game) {
   const [time, setTime] = useState();
   const [period, setPeriod] = useState();
 
@@ -29,8 +29,9 @@ export default function SelectedGame() {
 
   // const navigation = useNavigation();
   // const gameID = this.props.navigation.state.routeName;
-  const gameID = useRoute();
-  const box = `https://statsapi.web.nhl.com/api/v1${gameID}/feed/live`;
+  const gameInfo = useRoute();
+  const gameID = gameInfo.params.id
+  const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
 
   useEffect(() => {
@@ -232,6 +233,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     height: "40%",
+    padding: 20,
   },
   headerColumn: {
     display: "flex",
@@ -242,7 +244,7 @@ const style = StyleSheet.create({
   },
   headerTeam: {
     fontWeight: "600",
-    fontSize: 34,
+    fontSize: 28,
     textAlign: "center",
     color: "#fff",
   },
@@ -253,7 +255,6 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   headerScore: {
-    // height: "10%",
     fontSize: 60,
     fontWeight: "600",
     color: "#fff",
@@ -293,8 +294,6 @@ const style = StyleSheet.create({
   liveStat: {
     fontSize: 25,
     fontWeight: "600",
-    textDecorationColor: "none",
-    textDecorationStyle: "none",
     textAlign: "center",
     paddingTop: "5%",
     color: "#fff",
