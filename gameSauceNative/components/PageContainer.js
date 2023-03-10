@@ -4,6 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
+import SelectedGame from "./pages/SelectedGame";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,9 +22,18 @@ export default function PageContainer() {
         >
           <Stack.Screen name="Homepage" component={Homepage} />
           <Stack.Screen name="Games" component={Games} />
+          <Stack.Screen name="SelectedGame" component={SelectedGame} />
         </Stack.Navigator>
         <View style={style.navContainer}>
           <View style={style.navbar}>
+            <Icon.Button
+              style={style.icon}
+              name="home"
+              size={60}
+              onPress={() => navigation.navigate("Homepage")}
+            >
+              <Text style={style.iconText}>Home</Text>
+            </Icon.Button>
             <Icon.Button
               style={style.icon}
               name="games"

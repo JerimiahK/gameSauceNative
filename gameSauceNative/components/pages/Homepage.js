@@ -204,7 +204,7 @@ export default function Homepage() {
           <Text style={style.teamRecord}>
             {awayWins}-{awayLosses}-{awayTies}
           </Text>
-          <Text style={style.headerScore}>{awayScore}</Text>
+            <Text style={style.headerScore}>{awayScore}</Text>
         </View>
         <View style={style.period}>
           <Text style={style.headerPeriod}>{period}</Text>
@@ -215,7 +215,7 @@ export default function Homepage() {
           <Text style={style.teamRecord}>
             {homeWins}-{homeLosses}-{homeTies}
           </Text>
-          <Text style={style.headerScore}>{homeScore}</Text>
+            <Text style={style.headerScore}>{homeScore}</Text>
         </View>
       </View>
       {/* Stats Column */}
@@ -269,8 +269,7 @@ const style = StyleSheet.create({
   currentGameHeader: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignContent: "center",
+    justifyContent: "center",
     height: "40%"
   },
   headerColumn: {
@@ -282,7 +281,7 @@ const style = StyleSheet.create({
   },
   headerTeam: {
     fontWeight: "600",
-    fontSize: 28,
+    fontSize: 34,
     textAlign: "center",
     color: "#fff",
   },
@@ -293,6 +292,7 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   headerScore: {
+    // height: "10%",
     fontSize: 60,
     fontWeight: "600",
     color: "#fff",

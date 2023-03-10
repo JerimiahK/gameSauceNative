@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, Pressable, ScrollView, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import SelectedGame from "./SelectedGame";
 
 export default function Games() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
@@ -60,3 +59,7 @@ export default function Games() {
     </View>
   );
 }
+
+const style = StyleSheet.create({
+  
+})
