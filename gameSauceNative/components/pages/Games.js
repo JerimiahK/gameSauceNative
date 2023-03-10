@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { View, Text, Pressable, ScrollView, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Games() {
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
   const [games, setTodaysGames] = useState();
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function getData() {
@@ -33,22 +36,30 @@ export default function Games() {
   }, [url]);
 
   return (
-    <div id="allGames" className="currentGameBox">
-      {games?.map((game) => (
-          <div id="allGamesBox" className="container">
-            <div className="allGamesTeamsBox">
-              <div id="allGamesAway" className="allGamesRow">
-                <p>{game.awayName}</p>
-                <p className="gameScore">{game.awayScore}</p>
-              </div>
-              <div id="allGamesHome" className="allGamesRow">
-                <p>{game.homeName}</p>
-                <p className="gameScore">{game.homeScore}</p>
-              </div>
-            </div>
-            <p className="gameStatus">{game.status}</p>
-          </div>
-      ))}
-    </div>
+    <View id="allGames" className="currentGameBox">
+      <ScrollView>
+        {games?.map((game) => (
+          <View id="allGamesBox" className="container">
+            <Pressable onPress={() => navigation.navigate("SelectedGame")}>
+              <View className="allGamesTeamsBox">
+                <View id="allGamesAway" className="allGamesRow">
+                  <Text>{game.awayName}</Text>
+                  <Text className="gameScore">{game.awayScore}</Text>
+                </View>
+                <View id="allGamesHome" className="allGamesRow">
+                  <Text>{game.homeName}</Text>
+                  <Text className="gameScore">{game.homeScore}</Text>
+                </View>
+              </View>
+              <Text className="gameStatus">{game.status}</Text>
+            </Pressable>
+          </View>
+        ))}
+      </ScrollView>
+    </View>
   );
 }
+
+const style = StyleSheet.create({
+  
+})
