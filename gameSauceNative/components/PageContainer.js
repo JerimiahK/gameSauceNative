@@ -79,5 +79,6 @@ const style = StyleSheet.create({
   iconText: {
     color: "#fff",
     fontSize: 30,
+    fontWeight: "800"
   },
 });

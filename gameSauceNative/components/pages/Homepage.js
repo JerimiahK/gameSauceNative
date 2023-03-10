@@ -197,7 +197,7 @@ export default function Homepage() {
   }, [getData])
 
   return (
-    <LinearGradient style={{ height: "100%" }} colors={["#43014f", "#00d4ff"]}>
+    <LinearGradient style={{ height: "90%" }} colors={["#43014f", "#00d4ff"]}>
       <View style={style.currentGameHeader}>
         <View style={style.headerColumn}>
           <Text style={style.headerTeam}>{awayName}</Text>
@@ -323,7 +323,7 @@ const style = StyleSheet.create({
   currentRow: {
     display: "flex",
     flexDirection: "row",
-    height: "18%"
+    height: "20%"
   },
   column: {
     width: "50%",

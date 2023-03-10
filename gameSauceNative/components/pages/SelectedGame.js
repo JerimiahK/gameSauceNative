@@ -30,8 +30,10 @@ export default function SelectedGame() {
   // const navigation = useNavigation();
   // const gameID = this.props.navigation.state.routeName;
   const gameID = useRoute();
-  const box = `https://statsapi.web.nhl.com/api/v1${gameID}/feed/live`;
+  const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
+
+  console.log(gameID);
 
   useEffect(() => {
     async function getData() {
