@@ -34,8 +34,6 @@ export default function SelectedGame(game) {
   const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
 
-  console.log(gameID);
-
   useEffect(() => {
     async function getData() {
       let currentTeamRecords;
