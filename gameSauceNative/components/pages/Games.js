@@ -45,7 +45,11 @@ export default function Games() {
           <View key={game.id} style={style.box}>
             <Pressable
               style={style.page}
-              onPress={() => navigation.navigate("SelectedGame")}
+              onPress={() => navigation.navigate("SelectedGame", 
+              {
+                id: game.id
+              }
+              )}
             >
               <View style={style.gameRow}>
                 <Text style={style.text}>{game.awayName}</Text>

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet} from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function SelectedGame() {
+export default function SelectedGame(game) {
   const [time, setTime] = useState();
   const [period, setPeriod] = useState();
 
@@ -29,7 +29,8 @@ export default function SelectedGame() {
 
   // const navigation = useNavigation();
   // const gameID = this.props.navigation.state.routeName;
-  const gameID = useRoute();
+  const gameInfo = useRoute();
+  const gameID = gameInfo.params.id
   const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;
   const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
 
